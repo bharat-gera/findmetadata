@@ -52,6 +52,7 @@ class HomePage(FormView):
         html_resp = resp.read()
         response = self.extract_data(html_resp)
         seo_form = self.form_class_resp(response)
+        messages.success(self.request,"Meta Data is successfully saved.")
         return render_to_response(self.template_name_resp,{'seo_form':seo_form},context_instance= RequestContext(self.request))
 
 class SaveData(CreateView):
