@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block content %}
+		<div style="text-align: center;">
+			<form method="post" action="/save-data/" enctype="multipart/form-data">{%csrf_token%}
+				{%for i in seo_form%}
+				<div class="col-lg-4 " >
+				    <h2>{{i.help_text}}</h2> {{i}}
+				</div>
+				{%endfor%}    
+			<input type="submit" class="btn btn-primary" style="margin-top:50px;" value="Click here to save"/>
+			</form>
+		</div>	
+{% endblock %}
